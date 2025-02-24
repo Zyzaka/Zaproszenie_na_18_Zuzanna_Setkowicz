@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaproszenie na 18. Urodziny</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #89CFF0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .input-box {
+            margin: 20px 0;
+        }
+
+        .input-box input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .input-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #89CFF0;
+            color: white;
+            border: none;
+        }
+
+        .invite {
+            background-color: rgba(255, 200, 80, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left; /* Usunięte wycentrowanie */
+        }
+
+        .invite h1 {
+            color: #89CFF0;
+        }
+
+        .invite p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Zaproszenie na 18. Urodziny!</h1>
+    </div>
+
+    <div class="container">
+        <div class="input-box">
+            <label for="nameInput">Wpisz swoje imię i nazwisko:</label><br>
+            <input type="text" id="nameInput" placeholder="imie_nazwisko" required>
+            <button onclick="showInvitation()">Zatwierdź</button>
+        </div>
+
+        <div class="invite" id="invitation" style="display:none;">
+            <h1>Serdecznie zapraszam na moje 18. urodziny!</h1>
+            <p><strong>Zaproszenie dla:</strong> <span id="userName"></span></p>
+            <p><strong>Data:</strong> 15 marca 2025 r.</p>
+            <p><strong>Godzina:</strong> 18:00</p>
+            <p><strong>Miejsce:</strong> Dom Ludowy, Frywałd</p>
+            <p><strong>Proszę o potwierdzenie obecności do:</strong> 28 lutego 2025 r.</p>
+            <p ><strong>Dress code:</strong> Nie ma oficjalnych zasad, ale proszę, aby nie ubierać się na czarno. Wszystko może się jeszcze zmienić w najbliższych dniach.</p> 
+            <p>W razie pytań, proszę o kontakt: <strong>511 499 573</strong></p>
+            
+		<p style="text-align:center;"><strong>Będzie mi niezmiernie miło świętować ten wyjątkowy dzień w Twoim towarzystwie!</strong></p>
+
+        </div>
+    </div>
+
+    <script>
+        function showInvitation() {
+            var name = document.getElementById("nameInput").value;
+            if (name) {
+                document.getElementById("invitation").style.display = "block";
+                document.getElementById("userName").textContent = name;
+            } else {
+                alert("Proszę wprowadzić swoje imię i nazwisko.");
+            }
+        }
+    </script>
+</body>
+</html>
